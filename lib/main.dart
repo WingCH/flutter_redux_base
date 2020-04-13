@@ -10,15 +10,17 @@ import 'package:redux/redux.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(ReduxApp(
-    store: Store<AppState>(
-      appReducer,
-      initialState: AppState.initial(),
-      middleware: [
-        CounterMiddleware(),
-      ],
+  runApp(
+    ReduxApp(
+      store: Store<AppState>(
+        appReducer,
+        initialState: AppState.initial(),
+        middleware: [
+          CounterMiddleware(),
+        ],
+      ),
     ),
-  ));
+  );
 }
 
 class ReduxApp extends StatelessWidget {

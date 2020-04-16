@@ -1,4 +1,3 @@
-import 'package:flutterreduxbase/models/counter.dart';
 import 'package:flutterreduxbase/models/loading_status.dart';
 import 'package:flutterreduxbase/redux/app/app_state.dart';
 import 'package:flutterreduxbase/redux/counter/counter_actions.dart';
@@ -7,12 +6,10 @@ import 'package:redux/redux.dart';
 
 class MainPageViewModel {
   final LoadingStatus status;
-  final Counter counter;
   final Function addCounter;
 
   MainPageViewModel({
     @required this.status,
-    @required this.counter,
     @required this.addCounter,
   });
 
@@ -21,7 +18,6 @@ class MainPageViewModel {
   ) {
     return MainPageViewModel(
       status: store.state.counterState.counterStatus,
-      counter: store.state.counterState.counter,
       addCounter: () => store.dispatch(AddCounterAction()),
     );
   }
@@ -31,12 +27,11 @@ class MainPageViewModel {
     return identical(this, other) ||
         other is MainPageViewModel &&
             runtimeType == other.runtimeType &&
-            status == other.status &&
-            counter == other.counter;
+            status == other.status;
   }
 
   @override
   int get hashCode {
-    return status.hashCode ^ counter.hashCode;
+    return status.hashCode;
   }
 }

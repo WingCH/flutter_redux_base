@@ -9,6 +9,5 @@ CounterState counterReducer(CounterState state, dynamic action) {
     return state.copyWith(
         counterStatus: LoadingStatus.idle, counter: action.counter);
   }
-
   return state;
 }

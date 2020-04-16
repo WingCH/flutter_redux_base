@@ -5,11 +5,13 @@ import 'package:meta/meta.dart';
 import 'package:redux/redux.dart';
 
 class MainPageViewModel {
-  final LoadingStatus status;
+  final String lang;
+  final String url;
   final Function addCounter;
 
   MainPageViewModel({
-    @required this.status,
+    @required this.lang,
+    @required this.url,
     @required this.addCounter,
   });
 
@@ -17,7 +19,8 @@ class MainPageViewModel {
     Store<AppState> store,
   ) {
     return MainPageViewModel(
-      status: store.state.counterState.counterStatus,
+      lang: store.state.configState.lang,
+      url: store.state.configState.url,
       addCounter: () => store.dispatch(AddCounterAction()),
     );
   }
@@ -27,11 +30,12 @@ class MainPageViewModel {
     return identical(this, other) ||
         other is MainPageViewModel &&
             runtimeType == other.runtimeType &&
-            status == other.status;
+            lang == other.lang &&
+            url == other.url;
   }
 
   @override
   int get hashCode {
-    return status.hashCode;
+    return lang.hashCode ^ url.hashCode;
   }
 }

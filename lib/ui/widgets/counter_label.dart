@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutterreduxbase/viewmodels/widgets/counter_label_view_model.dart';
+import 'package:random_color/random_color.dart';
 
 import '../../redux/app/app_state.dart';
 
@@ -24,7 +25,11 @@ class _CounterLabelContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       viewModel.counter.count.toString(),
-      style: Theme.of(context).textTheme.display1,
+      style: Theme.of(context).textTheme.display1.merge(
+            TextStyle(
+              color: RandomColor().randomColor(),
+            ),
+          ),
     );
   }
 }

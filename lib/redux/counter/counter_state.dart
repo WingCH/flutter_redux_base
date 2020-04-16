@@ -34,12 +34,11 @@ class CounterState {
     return identical(this, other) ||
         other is CounterState &&
             runtimeType == other.runtimeType &&
-            counterStatus == other.counterStatus &&
             counter == other.counter;
   }
 
   @override
   int get hashCode {
-    return counterStatus.hashCode ^ counter.hashCode;
+    return counter.hashCode;
   }
 }

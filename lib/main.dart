@@ -4,6 +4,7 @@ import 'package:flutterreduxbase/redux/app/app_reducer.dart';
 import 'package:flutterreduxbase/redux/app/app_state.dart';
 import 'package:flutterreduxbase/redux/counter/counter_middleware.dart';
 import 'package:flutterreduxbase/ui/pages/main_page.dart';
+import 'package:flutterreduxbase/utils/keys.dart';
 import 'package:flutterreduxbase/utils/routers.dart';
 import 'package:redux/redux.dart';
 
@@ -34,6 +35,7 @@ class ReduxApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         title: "Redux Example",
+        navigatorKey: Keys.navigatorKey,
         routes: {
           Routes.home: (context) {
             return MainPage();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutterreduxbase/models/loading_status.dart';
 import 'package:flutterreduxbase/viewmodels/widgets/counter_label_view_model.dart';
 import 'package:random_color/random_color.dart';
 
@@ -23,13 +24,15 @@ class _CounterLabelContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      viewModel.counter.count.toString(),
-      style: Theme.of(context).textTheme.display1.merge(
-            TextStyle(
-              color: RandomColor().randomColor(),
-            ),
-          ),
-    );
+    return viewModel.loadingStatus == LoadingStatus.loading
+        ? CircularProgressIndicator()
+        : Text(
+            viewModel.counter.count.toString(),
+            style: Theme.of(context).textTheme.display1.merge(
+                  TextStyle(
+                    color: RandomColor().randomColor(),
+                  ),
+                ),
+          );
   }
 }

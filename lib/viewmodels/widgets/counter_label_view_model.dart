@@ -6,21 +6,19 @@ import '../../models/counter.dart';
 import '../../redux/app/app_state.dart';
 
 class CounterLabelViewModel {
-  final LoadingStatus counterStatus;
-  final Counter counter;
   final LoadingStatus loadingStatus;
+  final Counter counter;
 
   CounterLabelViewModel({
-    @required this.counterStatus,
-    @required this.counter,
     @required this.loadingStatus,
+    @required this.counter,
   });
 
   static CounterLabelViewModel fromStore(
-      Store<AppState> store,
-      ) {
+    Store<AppState> store,
+  ) {
     return CounterLabelViewModel(
-      counterStatus: store.state.counterState.counterStatus,
+      loadingStatus: store.state.counterState.counterStatus,
       counter: store.state.counterState.counter,
     );
   }
@@ -30,12 +28,12 @@ class CounterLabelViewModel {
     return identical(this, other) ||
         other is CounterLabelViewModel &&
             runtimeType == other.runtimeType &&
-            counterStatus == other.counterStatus &&
+            loadingStatus == other.loadingStatus &&
             counter == other.counter;
   }
 
   @override
   int get hashCode {
-    return counterStatus.hashCode ^ counter.hashCode;
+    return loadingStatus.hashCode ^ counter.hashCode;
   }
 }

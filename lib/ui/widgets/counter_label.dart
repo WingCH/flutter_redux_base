@@ -25,7 +25,7 @@ class _CounterLabelContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return viewModel.counterStatus == LoadingStatus.loading
+    return viewModel.loadingStatus == LoadingStatus.loading
         ? CircularProgressIndicator()
         : Text(
             viewModel.counter.count.toString(),

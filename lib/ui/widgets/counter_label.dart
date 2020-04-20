@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutterreduxbase/models/loading_status.dart';
+import 'package:flutterreduxbase/viewmodels/pages/main_page_view_model.dart';
 import 'package:flutterreduxbase/viewmodels/widgets/counter_label_view_model.dart';
 import 'package:random_color/random_color.dart';
 
@@ -10,7 +12,7 @@ class CounterLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, CounterLabelViewModel>(
       distinct: true,
-      converter: (store) => CounterLabelViewModel.fromStore(store),
+      converter: (store) => MainPageViewModel.counterLabelViewModel(store),
       builder: (_, viewModel) => _CounterLabelContent(viewModel: viewModel),
     );
   }

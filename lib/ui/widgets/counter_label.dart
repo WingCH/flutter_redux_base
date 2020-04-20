@@ -23,13 +23,15 @@ class _CounterLabelContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      viewModel.counter.count.toString(),
-      style: Theme.of(context).textTheme.display1.merge(
-            TextStyle(
-              color: RandomColor().randomColor(),
-            ),
-          ),
-    );
+    return viewModel.counterStatus == LoadingStatus.loading
+        ? CircularProgressIndicator()
+        : Text(
+            viewModel.counter.count.toString(),
+            style: Theme.of(context).textTheme.display1.merge(
+                  TextStyle(
+                    color: RandomColor().randomColor(),
+                  ),
+                ),
+          );
   }
 }

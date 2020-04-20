@@ -1,5 +1,7 @@
 import 'package:flutterreduxbase/redux/app/app_state.dart';
 import 'package:flutterreduxbase/redux/counter/counter_actions.dart';
+import 'package:flutterreduxbase/utils/keys.dart';
+import 'package:flutterreduxbase/utils/routers.dart';
 import 'package:flutterreduxbase/viewmodels/widgets/counter_label_view_model.dart';
 import 'package:meta/meta.dart';
 import 'package:redux/redux.dart';
@@ -8,11 +10,13 @@ class MainPageViewModel {
   final String lang;
   final String url;
   final Function addCounter;
+  final Function goToSecondPage;
 
   MainPageViewModel({
     @required this.lang,
     @required this.url,
     @required this.addCounter,
+    @required this.goToSecondPage,
   });
 
   static MainPageViewModel fromStore(
@@ -22,6 +26,8 @@ class MainPageViewModel {
       lang: store.state.configState.lang,
       url: store.state.configState.url,
       addCounter: () => store.dispatch(AddCounterAction()),
+      goToSecondPage: () =>
+          Keys.navigatorKey.currentState.pushNamed(Routes.secondPage),
     );
   }
 

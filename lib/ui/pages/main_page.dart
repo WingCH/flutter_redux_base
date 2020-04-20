@@ -32,10 +32,23 @@ class _MainPageContent extends StatelessWidget {
         title: Text('Redux Example'),
         centerTitle: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: viewModel.addCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          FloatingActionButton(
+            heroTag: "goToSecondPage",
+            onPressed: viewModel.goToSecondPage,
+            tooltip: 'goToSecondPage',
+            child: Icon(Icons.arrow_forward),
+          ),
+          SizedBox(height: 10),
+          FloatingActionButton(
+            heroTag: "Increment",
+            onPressed: viewModel.addCounter,
+            tooltip: 'Increment',
+            child: Icon(Icons.add),
+          ),
+        ],
       ),
       body: Column(
         children: <Widget>[

@@ -29,11 +29,15 @@ class _CounterLabelContent extends StatelessWidget {
         ? CircularProgressIndicator()
         : Text(
             viewModel.counter.count.toString(),
-            style: Theme.of(context).textTheme.display1.merge(
-                  TextStyle(
-                    color: RandomColor().randomColor(),
-                  ),
-                ),
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.blueGrey,
+            ).merge(
+              TextStyle(
+                color: RandomColor().randomColor(),
+              ),
+            ),
           );
   }
 }

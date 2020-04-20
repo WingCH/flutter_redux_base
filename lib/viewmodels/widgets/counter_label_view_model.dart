@@ -8,15 +8,17 @@ import '../../redux/app/app_state.dart';
 class CounterLabelViewModel {
   final LoadingStatus counterStatus;
   final Counter counter;
+  final LoadingStatus loadingStatus;
 
   CounterLabelViewModel({
     @required this.counterStatus,
     @required this.counter,
+    @required this.loadingStatus,
   });
 
   static CounterLabelViewModel fromStore(
-    Store<AppState> store,
-  ) {
+      Store<AppState> store,
+      ) {
     return CounterLabelViewModel(
       counterStatus: store.state.counterState.counterStatus,
       counter: store.state.counterState.counter,

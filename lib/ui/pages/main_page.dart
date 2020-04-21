@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutterreduxbase/redux/app/app_state.dart';
+import 'package:flutterreduxbase/ui/widgets/config_card.dart';
 import 'package:flutterreduxbase/ui/widgets/counter_label.dart';
 import 'package:flutterreduxbase/viewmodels/pages/main_page_view_model.dart';
-import 'package:random_color/random_color.dart';
 
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, MainPageViewModel>(
-      distinct: true,
+      rebuildOnChange: false,
       converter: (store) => MainPageViewModel.fromStore(store),
       builder: (_, viewModel) {
         return _MainPageContent(viewModel: viewModel);
@@ -25,8 +25,6 @@ class _MainPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color color = RandomColor().randomColor();
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Redux Example'),
@@ -52,17 +50,14 @@ class _MainPageContent extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Text(
-            viewModel.lang,
-            style: TextStyle(
-              color: color,
+          ConfigCard(),
+          RaisedButton(
+            child: Text(
+              'Change config',
+              style: TextStyle(color: Colors.white),
             ),
-          ),
-          Text(
-            viewModel.url,
-            style: TextStyle(
-              color: color,
-            ),
+            color: Colors.blueGrey,
+            onPressed: viewModel.updateConfig,
           ),
           Expanded(
             child: Center(

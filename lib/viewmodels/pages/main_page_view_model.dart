@@ -1,51 +1,49 @@
 import 'package:flutterreduxbase/redux/app/app_state.dart';
+import 'package:flutterreduxbase/redux/config/config_action.dart';
 import 'package:flutterreduxbase/redux/counter/counter_actions.dart';
 import 'package:flutterreduxbase/utils/keys.dart';
 import 'package:flutterreduxbase/utils/routers.dart';
+import 'package:flutterreduxbase/viewmodels/widgets/config_card_view_model.dart';
 import 'package:flutterreduxbase/viewmodels/widgets/counter_label_view_model.dart';
 import 'package:meta/meta.dart';
 import 'package:redux/redux.dart';
 
 class MainPageViewModel {
-  final String lang;
-  final String url;
   final Function addCounter;
   final Function goToSecondPage;
+  final Function updateConfig;
 
   MainPageViewModel({
-    @required this.lang,
-    @required this.url,
     @required this.addCounter,
     @required this.goToSecondPage,
+    @required this.updateConfig,
   });
 
   static MainPageViewModel fromStore(
     Store<AppState> store,
   ) {
     return MainPageViewModel(
-      lang: store.state.configState.lang,
-      url: store.state.configState.url,
-      addCounter: () => store.dispatch(AddCounterAction()),
-      goToSecondPage: () =>
-          Keys.navigatorKey.currentState.pushNamed(Routes.secondPage),
-    );
-  }
-
-  @override
-  bool operator ==(other) {
-    return identical(this, other) ||
-        other is MainPageViewModel &&
-            runtimeType == other.runtimeType &&
-            lang == other.lang &&
-            url == other.url;
-  }
-
-  @override
-  int get hashCode {
-    return lang.hashCode ^ url.hashCode;
+        addCounter: () => store.dispatch(AddCounterAction()),
+        goToSecondPage: () =>
+            Keys.navigatorKey.currentState.pushNamed(Routes.secondPage),
+        updateConfig: () {
+          if (store.state.configState.lang == "en") {
+            store.dispatch(
+              UpdateConfigAction("zh", "www.google.com"),
+            );
+          } else {
+            store.dispatch(
+              UpdateConfigAction("en", "www.google.com"),
+            );
+          }
+        });
   }
 
   static counterLabelViewModel(Store<AppState> store) {
     return CounterLabelViewModel.fromStore(store);
+  }
+
+  static configCardViewModel(Store<AppState> store) {
+    return ConfigCardViewModel.fromStore(store);
   }
 }

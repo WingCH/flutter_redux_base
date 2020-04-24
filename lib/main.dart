@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutterreduxbase/redux/app/app_middleware.dart';
 import 'package:flutterreduxbase/redux/app/app_reducer.dart';
 import 'package:flutterreduxbase/redux/app/app_state.dart';
 import 'package:flutterreduxbase/redux/counter/counter_middleware.dart';
@@ -17,9 +18,7 @@ Future<void> main() async {
       store: Store<AppState>(
         appReducer,
         initialState: AppState.initial(),
-        middleware: [
-          CounterMiddleware(),
-        ],
+        middleware: appMiddleware(),
       ),
     ),
   );

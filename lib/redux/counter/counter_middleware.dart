@@ -6,9 +6,8 @@ import 'package:flutterreduxbase/redux/app/app_state.dart';
 import 'package:flutterreduxbase/redux/counter/counter_actions.dart';
 import 'package:redux/redux.dart';
 
-class CounterMiddleware extends MiddlewareClass<AppState> {
-  @override
-  call(Store<AppState> store, dynamic action, NextDispatcher next) {
+Middleware<AppState> addCounterMiddleware() {
+  return (Store<AppState> store, action, NextDispatcher next) {
     next(action);
 
     if (action is AddCounterAction) {
@@ -17,10 +16,10 @@ class CounterMiddleware extends MiddlewareClass<AppState> {
         Timer(Duration(seconds: 1), () {
           int oldCount = store.state.counterState.counter.count;
           final Counter newCounter =
-              store.state.counterState.counter.copyWith(count: oldCount + 1);
+          store.state.counterState.counter.copyWith(count: oldCount + 1);
           next(UpdateCounterAction(newCounter));
         });
       }
     }
-  }
+  };
 }

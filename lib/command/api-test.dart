@@ -7,14 +7,14 @@ Future<void> main(List<String> arguments) async {
   print(arguments);
   arguments.forEach((argument) async {
     if (argument == Api.getSeasonList) {
-      await getSeasonList(dioUtils);
+      await getSeasonList(dioUtils, Api.getSeasonList);
     }
   });
 }
 
-Future getSeasonList(DioUtils dioUtils) async {
+Future getSeasonList(DioUtils dioUtils, String url) async {
   String result = await dioUtils.get(
-    "/getSeasonList",
+    url,
     queryParameters: {
       "source": "a",
       "sId": "1",

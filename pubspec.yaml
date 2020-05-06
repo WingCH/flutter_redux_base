@@ -35,6 +35,7 @@ dependencies:
   random_color: ^1.0.5
   dio: ^3.0.9
   pretty_dio_logger: ^1.1.1
+  args: ^1.6.0
 
 dev_dependencies:
   flutter_test:

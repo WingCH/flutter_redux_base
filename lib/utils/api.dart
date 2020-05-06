@@ -1,3 +1,3 @@
 class Api {
-  static final getSeasonList = '/getSeasonList';
+  static final getSeasonList = '/api/getSeasonList';
 }

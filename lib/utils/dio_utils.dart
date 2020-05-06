@@ -3,7 +3,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 // https://github.com/xiedong11/flutter_app/blob/master/lib/pages/network/utils/dio_utils.dart
 class DioUtils {
-  static final String baseUrl = "http://localhost:3030/api"; //base url
+  static final String baseUrl = "http://localhost:3030"; //base url
   static DioUtils _instance;
   Dio _dio;
   BaseOptions _baseOptions;

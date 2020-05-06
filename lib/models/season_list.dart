@@ -12,8 +12,8 @@ SeasonList seasonListFromJson(String str) =>
 String seasonListToJson(SeasonList data) => json.encode(data.toMap());
 
 class SeasonList extends Equatable {
-  bool success;
-  Data data;
+  final bool success;
+  final Data data;
 
   SeasonList({
     this.success,
@@ -47,9 +47,9 @@ class SeasonList extends Equatable {
 }
 
 class Data extends Equatable {
-  List<Menu> menu;
-  List<dynamic> popular;
-  List<Country> country;
+  final List<Menu> menu;
+  final List<dynamic> popular;
+  final List<Country> country;
 
   Data({
     this.menu,
@@ -89,8 +89,8 @@ class Data extends Equatable {
 }
 
 class Country extends Equatable {
-  String name;
-  List<Competition> competitions;
+  final String name;
+  final List<Competition> competitions;
 
   Country({
     this.name,
@@ -125,9 +125,9 @@ class Country extends Equatable {
 }
 
 class Competition extends Equatable {
-  String name;
-  int count;
-  List<String> competitionId;
+  final String name;
+  final int count;
+  final List<String> competitionId;
 
   Competition({
     this.name,
@@ -166,9 +166,9 @@ class Competition extends Equatable {
 }
 
 class Menu extends Equatable {
-  String name;
-  int count;
-  List<String> competitionIds;
+  final String name;
+  final int count;
+  final List<String> competitionIds;
 
   Menu({
     this.name,

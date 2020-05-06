@@ -12,12 +12,12 @@ GlobalSettings globalSettingsFromJson(String str) =>
 String globalSettingsToJson(GlobalSettings data) => json.encode(data.toMap());
 
 class GlobalSettings extends Equatable {
-  bool success;
-  dynamic msg;
-  List<Datum> data;
+  final bool success;
+  final dynamic msg;
+  final List<Datum> data;
 
   GlobalSettings({
-    this.success,
+    final this.success,
     this.msg,
     this.data,
   });
@@ -54,9 +54,9 @@ class GlobalSettings extends Equatable {
 }
 
 class Datum extends Equatable {
-  String paramName;
-  String value;
-  String defaultValue;
+  final String paramName;
+  final String value;
+  final String defaultValue;
 
   Datum({
     this.paramName,

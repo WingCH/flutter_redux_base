@@ -11,8 +11,8 @@ DateList dateListFromJson(String str) => DateList.fromMap(json.decode(str));
 String dateListToJson(DateList data) => json.encode(data.toMap());
 
 class DateList extends Equatable {
-  bool success;
-  List<Datum> data;
+  final bool success;
+  final List<Datum> data;
 
   DateList({
     this.success,
@@ -46,8 +46,8 @@ class DateList extends Equatable {
 }
 
 class Datum extends Equatable {
-  String name;
-  String date;
+  final String name;
+  final String date;
 
   Datum({
     this.name,

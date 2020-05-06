@@ -12,9 +12,9 @@ WalletInfo walletInfoFromJson(String str) =>
 String walletInfoToJson(WalletInfo data) => json.encode(data.toMap());
 
 class WalletInfo extends Equatable {
-  bool success;
-  String msg;
-  Data data;
+  final bool success;
+  final String msg;
+  final Data data;
 
   WalletInfo({
     this.success,
@@ -54,7 +54,7 @@ class WalletInfo extends Equatable {
 }
 
 class Data extends Equatable {
-  int balance;
+  final int balance;
 
   Data({
     this.balance,

@@ -12,9 +12,9 @@ PlayerInfo playerInfoFromJson(String str) =>
 String playerInfoToJson(PlayerInfo data) => json.encode(data.toMap());
 
 class PlayerInfo extends Equatable {
-  bool success;
-  dynamic msg;
-  Data data;
+  final bool success;
+  final dynamic msg;
+  final Data data;
 
   PlayerInfo({
     this.success,
@@ -54,10 +54,10 @@ class PlayerInfo extends Equatable {
 }
 
 class Data extends Equatable {
-  String username;
-  String brand;
-  DateTime createTime;
-  DateTime updateTime;
+  final String username;
+  final String brand;
+  final DateTime createTime;
+  final DateTime updateTime;
 
   Data({
     this.username,

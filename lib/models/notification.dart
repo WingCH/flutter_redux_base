@@ -12,9 +12,9 @@ Notification notificationFromJson(String str) =>
 String notificationToJson(Notification data) => json.encode(data.toMap());
 
 class Notification extends Equatable {
-  bool success;
-  dynamic msg;
-  List<Datum> data;
+  final bool success;
+  final dynamic msg;
+  final List<Datum> data;
 
   Notification({
     this.success,
@@ -54,25 +54,25 @@ class Notification extends Equatable {
 }
 
 class Datum extends Equatable {
-  int notificationId;
-  String title;
-  String categories;
-  String description;
-  DateTime publishStartDate;
-  DateTime publishEndDate;
-  String content;
-  dynamic desktopHomepageImg;
-  dynamic mobileHomepageImg;
-  String desktopHomepageUrl;
-  dynamic mobileHomepageUrl;
-  dynamic desktopHomepageImgFileName;
-  dynamic mobileHomepageImgFileName;
-  List<dynamic> deleteImages;
-  DateTime createdDate;
-  DateTime updatedDate;
-  bool shownInHomePage;
-  bool active;
-  bool deleted;
+  final int notificationId;
+  final String title;
+  final String categories;
+  final String description;
+  final DateTime publishStartDate;
+  final DateTime publishEndDate;
+  final String content;
+  final dynamic desktopHomepageImg;
+  final dynamic mobileHomepageImg;
+  final String desktopHomepageUrl;
+  final dynamic mobileHomepageUrl;
+  final dynamic desktopHomepageImgFileName;
+  final dynamic mobileHomepageImgFileName;
+  final List<dynamic> deleteImages;
+  final DateTime createdDate;
+  final DateTime updatedDate;
+  final bool shownInHomePage;
+  final bool active;
+  final bool deleted;
 
   Datum({
     this.notificationId,

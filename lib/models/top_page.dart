@@ -11,8 +11,8 @@ TopPage topPageFromJson(String str) => TopPage.fromMap(json.decode(str));
 String topPageToJson(TopPage data) => json.encode(data.toMap());
 
 class TopPage extends Equatable {
-  bool success;
-  String data;
+  final bool success;
+  final String data;
 
   TopPage({
     this.success,

@@ -12,9 +12,9 @@ SystemSettings systemSettingsFromJson(String str) =>
 String systemSettingsToJson(SystemSettings data) => json.encode(data.toMap());
 
 class SystemSettings extends Equatable {
-  bool success;
-  dynamic msg;
-  List<Datum> data;
+  final bool success;
+  final dynamic msg;
+  final List<Datum> data;
 
   SystemSettings({
     this.success,
@@ -54,9 +54,9 @@ class SystemSettings extends Equatable {
 }
 
 class Datum extends Equatable {
-  String paramName;
-  String value;
-  String defaultValue;
+  final String paramName;
+  final String value;
+  final String defaultValue;
 
   Datum({
     this.paramName,

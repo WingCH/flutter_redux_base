@@ -12,9 +12,9 @@ BetRecords betRecordsFromJson(String str) =>
 String betRecordsToJson(BetRecords data) => json.encode(data.toMap());
 
 class BetRecords extends Equatable {
-  bool success;
-  dynamic msg;
-  List<Datum> data;
+  final bool success;
+  final dynamic msg;
+  final List<Datum> data;
 
   BetRecords({
     this.success,
@@ -53,22 +53,22 @@ class BetRecords extends Equatable {
 }
 
 class Datum extends Equatable {
-  int id;
-  String uuid;
-  String label;
-  bool multiples;
-  dynamic lastSettleTime;
-  int totalStake;
-  int totalAnte;
-  int totalEffectiveAnte;
-  int totalPayoutAmount;
-  int numMatch;
-  int numCombination;
-  String metadata;
-  dynamic tags;
-  String platform;
-  String createTime;
-  List<BetDatum> betData;
+  final int id;
+  final String uuid;
+  final bool multiples;
+  final String label;
+  final dynamic lastSettleTime;
+  final int totalStake;
+  final int totalAnte;
+  final int totalEffectiveAnte;
+  final int totalPayoutAmount;
+  final int numMatch;
+  final int numCombination;
+  final String metadata;
+  final dynamic tags;
+  final String platform;
+  final String createTime;
+  final List<BetDatum> betData;
 
   Datum({
     this.id,
@@ -190,17 +190,17 @@ class Datum extends Equatable {
 }
 
 class BetDatum extends Equatable {
-  int id;
-  String fixtureId;
-  String marketId;
-  String outcomeId;
-  String sportType;
-  dynamic resultOddsNumerator;
-  dynamic resultOddsDenominator;
-  bool isEnded;
-  String source;
-  String metadata;
-  dynamic voidReason;
+  final int id;
+  final String fixtureId;
+  final String marketId;
+  final String outcomeId;
+  final String sportType;
+  final dynamic resultOddsNumerator;
+  final dynamic resultOddsDenominator;
+  final bool isEnded;
+  final String source;
+  final String metadata;
+  final dynamic voidReason;
 
   BetDatum({
     this.id,

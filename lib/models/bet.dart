@@ -11,11 +11,11 @@ Bet betFromJson(String str) => Bet.fromMap(json.decode(str));
 String betToJson(Bet data) => json.encode(data.toMap());
 
 class Bet extends Equatable {
-  String acceptance;
-  String oddsType;
-  String platform;
-  List<Outcome> outcomes;
-  List<dynamic> units;
+  final String acceptance;
+  final String oddsType;
+  final String platform;
+  final List<Outcome> outcomes;
+  final List<dynamic> units;
 
   Bet({
     this.acceptance,
@@ -65,14 +65,14 @@ class Bet extends Equatable {
 }
 
 class Outcome extends Equatable {
-  String fixtureId;
-  String marketId;
-  String outcomeId;
-  String matchStatus;
-  String odds;
-  String source;
-  String sportType;
-  int stake;
+  final String fixtureId;
+  final String marketId;
+  final String outcomeId;
+  final String matchStatus;
+  final String odds;
+  final String source;
+  final String sportType;
+  final int stake;
 
   Outcome({
     this.fixtureId,
@@ -86,14 +86,14 @@ class Outcome extends Equatable {
   });
 
   Outcome copyWith({
-    String fixtureId,
-    String marketId,
-    String outcomeId,
-    String matchStatus,
-    String odds,
-    String source,
-    String sportType,
-    int stake,
+    final String fixtureId,
+    final String marketId,
+    final String outcomeId,
+    final String matchStatus,
+    final String odds,
+    final String source,
+    final String sportType,
+    final int stake,
   }) =>
       Outcome(
         fixtureId: fixtureId ?? this.fixtureId,

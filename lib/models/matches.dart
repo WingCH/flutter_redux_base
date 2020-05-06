@@ -11,9 +11,9 @@ Matches matchesFromJson(String str) => Matches.fromMap(json.decode(str));
 String matchesToJson(Matches data) => json.encode(data.toMap());
 
 class Matches extends Equatable {
-  bool success;
-  List<List<Datum>> data;
-  PageData pageData;
+  final bool success;
+  final List<List<Datum>> data;
+  final PageData pageData;
 
   Matches({
     this.success,
@@ -54,29 +54,29 @@ class Matches extends Equatable {
 }
 
 class Datum extends Equatable {
-  String fixtureId;
-  String fixtureType;
-  String startTime;
-  List<Competitor> competitors;
-  String seasonName;
-  String status;
-  int totalMarkets;
-  String seasonId;
-  String source;
-  String venue;
-  bool isNeutral;
-  String clock;
-  bool haveLiveMatch;
-  String liveStatus;
-  String matchId;
-  bool upComingInplay;
-  int startTimestamp;
-  String round;
-  String scoreBarInfo;
-  Score score;
-  int ctid;
-  String description;
-  List<Market> markets;
+  final String fixtureId;
+  final String fixtureType;
+  final String startTime;
+  final List<Competitor> competitors;
+  final String seasonName;
+  final String status;
+  final int totalMarkets;
+  final String seasonId;
+  final String source;
+  final String venue;
+  final bool isNeutral;
+  final String clock;
+  final bool haveLiveMatch;
+  final String liveStatus;
+  final String matchId;
+  final bool upComingInplay;
+  final int startTimestamp;
+  final String round;
+  final String scoreBarInfo;
+  final Score score;
+  final int ctid;
+  final String description;
+  final List<Market> markets;
 
   Datum({
     this.fixtureId,
@@ -241,8 +241,8 @@ class Datum extends Equatable {
 }
 
 class Competitor extends Equatable {
-  String name;
-  String qualifier;
+  final String name;
+  final String qualifier;
 
   Competitor({
     this.name,
@@ -276,15 +276,15 @@ class Competitor extends Equatable {
 }
 
 class Market extends Equatable {
-  String id;
-  String name;
-  int status;
-  String marketTypeId;
-  List<Outcome> outcomes;
-  String marketCode;
-  String marketId;
-  String specifiers;
-  bool isOldHcp;
+  final String id;
+  final String name;
+  final int status;
+  final String marketTypeId;
+  final List<Outcome> outcomes;
+  final String marketCode;
+  final String marketId;
+  final String specifiers;
+  final bool isOldHcp;
 
   Market({
     this.id,
@@ -364,17 +364,17 @@ class Market extends Equatable {
 }
 
 class Outcome extends Equatable {
-  String id;
-  String name;
-  int active;
-  int euroNumerator;
-  int euroDenominator;
-  String euOdds;
-  String odds;
-  String numerator;
-  String denominator;
-  String outcomeCode;
-  String specifier;
+  final String id;
+  final String name;
+  final int active;
+  final int euroNumerator;
+  final int euroDenominator;
+  final String euOdds;
+  final String odds;
+  final String numerator;
+  final String denominator;
+  final String outcomeCode;
+  final String specifier;
 
   Outcome({
     this.id,
@@ -465,10 +465,10 @@ class Outcome extends Equatable {
 }
 
 class Score extends Equatable {
-  int homeScore;
-  int awayScore;
-  int hRedCard;
-  int aRedCard;
+  final int homeScore;
+  final int awayScore;
+  final int hRedCard;
+  final int aRedCard;
 
   Score({
     this.homeScore,
@@ -512,15 +512,15 @@ class Score extends Equatable {
 }
 
 class PageData extends Equatable {
-  int page;
-  int pageRecordCount;
-  int totalRecords;
-  int totalPages;
-  String lang;
-  int pageSize;
-  int timezone;
-  int ignoreFixture;
-  int ignoreFixtureNoMarkets;
+  final int page;
+  final int pageRecordCount;
+  final int totalRecords;
+  final int totalPages;
+  final String lang;
+  final int pageSize;
+  final int timezone;
+  final int ignoreFixture;
+  final int ignoreFixtureNoMarkets;
 
   PageData({
     this.page,

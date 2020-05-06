@@ -12,9 +12,9 @@ MatchCount matchCountFromJson(String str) =>
 String matchCountToJson(MatchCount data) => json.encode(data.toMap());
 
 class MatchCount extends Equatable {
-  bool success;
-  Data data;
-  int code;
+  final bool success;
+  final Data data;
+  final int code;
 
   MatchCount({
     this.success,
@@ -53,10 +53,10 @@ class MatchCount extends Equatable {
 }
 
 class Data {
-  Baseball football;
-  Baseball basketball;
-  Baseball tennis;
-  Baseball baseball;
+  final Baseball football;
+  final Baseball basketball;
+  final Baseball tennis;
+  final Baseball baseball;
 
   Data({
     this.football,
@@ -100,10 +100,10 @@ class Data {
 }
 
 class Baseball extends Equatable {
-  int live;
-  int today;
-  int pre;
-  int parlay;
+  final int live;
+  final int today;
+  final int pre;
+  final int parlay;
 
   Baseball({
     this.live,

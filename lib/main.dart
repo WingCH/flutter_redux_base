@@ -3,7 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutterreduxbase/redux/app/app_middleware.dart';
 import 'package:flutterreduxbase/redux/app/app_reducer.dart';
 import 'package:flutterreduxbase/redux/app/app_state.dart';
-import 'package:flutterreduxbase/redux/counter/counter_middleware.dart';
 import 'package:flutterreduxbase/ui/pages/main_page.dart';
 import 'package:flutterreduxbase/ui/pages/second_page.dart';
 import 'package:flutterreduxbase/utils/keys.dart';
